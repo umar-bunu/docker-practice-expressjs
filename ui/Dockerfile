@@ -2,11 +2,10 @@ FROM node:17-alpine
 
 
 #Specify working directory
-WORKDIR /app/api
+WORKDIR /app
 
 COPY package.json .
 
-RUN npm install -g nodemon
 
 #install all dependencies
 RUN npm install
@@ -15,10 +14,8 @@ RUN npm install
 COPY . .
 
 #choose the port to export
-EXPOSE 3000
+EXPOSE 5173
 
 #run the app
 CMD [ "npm", "run", "dev" ]
-
-
 
